@@ -2,25 +2,28 @@
 
 namespace App\Model;
 
-//require 'lib/PHPMailer/src/PHPMailer.php';
-//require 'lib/PHPMailer/src/SMTP.php';
-//require 'lib/PHPMailer/src/Exception.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+
 
 class ContactManager
 {
-/*
+
     public function sendEmail($lastname, $firstname, $email, $subject, $content)
     {
 
         try {
-            $mail = new PHPMailer(true);
+
+            $mail = new PHPMailer();
             $mail->isSMTP(); // Paramétrer le Mailer pour utiliser SMTP 
-            $mail->Host = 'smtp.gmail.com'; // Spécifier le serveur SMTP
+            $mail->Host = ''; // Spécifier le serveur SMTP
             $mail->SMTPAuth = true; // Activer authentication SMTP
-            $mail->Username = 'admin@gmail.com'; // Votre adresse email d'envoi
+            $mail->Port = 2525;
+            $mail->Username = ''; // Votre adresse email d'envoi
             $mail->Password = ''; // Le mot de passe de cette adresse email
-            $mail->SMTPSecure = 'ssl'; // Accepter SSL
-            $mail->Port = 465;
+            //$mail->SMTPSecure = 'ssl'; // Accepter SSL
+            
             $mail->setFrom($email, $lastname . ' ' . $firstname); // Personnaliser l'envoyeur
 
 
@@ -40,10 +43,10 @@ class ContactManager
             return true;
         }
         // si le try ne marche pas 
-        catch (\PHPMailer\PHPMailer\Exception $e) {
+        catch (Exception $e) {
             return false;
         }
     }
-    */
+
 }
 
