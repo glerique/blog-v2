@@ -38,7 +38,7 @@ class UserManager extends Database
     $query->bindValue(':email', $user->getEmail());
     $query->bindValue(':nickname', $user->getNickname());
     $query->bindValue(':password', $user->getPassword());
-    $query->bindValue(':userRole', $user->getUserRole());
+    $query->bindValue(':userRole', $user->getUserRole());    
     $query->execute();
   }
 

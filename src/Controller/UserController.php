@@ -25,11 +25,11 @@ class UserController extends Controller
         $firstName = filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_SPECIAL_CHARS);
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $nickname = filter_input(INPUT_POST, 'nickname', FILTER_SANITIZE_SPECIAL_CHARS);
-        $pswd = filter_input(INPUT_POST, 'pswd');
-        $confirmPswd = filter_input(INPUT_POST, 'confirmPswd');
+        $pswd = filter_input(INPUT_POST, 'password');
+        $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
 
 
-        if (!$lastName || !$firstName || !$email || !$nickname || !$pswd || !$confirmPswd) {
+        if (!$lastName || !$firstName || !$email || !$nickname || !$pswd || !$confirmPassword) {
             $this->redirectWithError(
                 "index.php?controller=User&action=ajouter",
                 "Veuillez remplir tous les champs du formulaire correctement"
@@ -59,14 +59,14 @@ class UserController extends Controller
         }
 
         // Vérification que les mot de passe sont identiques (password et confirmPswd)
-        if ($pswd != $confirmPswd) {
+        if ($pswd != $confirmPassword) {
             $this->redirectWithError(
                 "index.php?controller=User&action=ajouter",
                 "Les deux mots de passe ne correspondent pas"
             );
         }
         //Création d'une clé de hachage pour le mot de passe
-        $password = password_hash($_POST['pswd'], PASSWORD_DEFAULT);
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         //Le role d'un utilisateur par defaut est Membre
         $userRole =  "Membre";
 
@@ -75,7 +75,7 @@ class UserController extends Controller
             'firstName' => $firstName,
             'email' => $email,
             'nickname' => $nickname,
-            'pswd' => $password,
+            'password' => $password,
             'userRole' => $userRole
         ]);
 

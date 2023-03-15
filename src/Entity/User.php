@@ -35,7 +35,7 @@ class User extends Entity
         return $this->nickname;
     }
 
-    public function getpassword()
+    public function getPassword()
     {
         return $this->password;
     }
@@ -67,7 +67,7 @@ class User extends Entity
         $this->nickname = $nickname;
     }
 
-    public function setpassword($password)
+    public function setPassword($password)
     {
         $this->password = $password;
     }

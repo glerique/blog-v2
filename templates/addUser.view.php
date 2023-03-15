@@ -34,12 +34,12 @@
               </div>              
               <div class="col-12">
                 <div class="form-group">
-                  Mot de passe : <input class="form-control" type ="password" name="pswd">
+                  Mot de passe : <input class="form-control" type ="password" name="password">
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
-                  Confirmez le mot de Passe : <input class="form-control" type ="password" name="confirmPswd">
+                  Confirmez le mot de Passe : <input class="form-control" type ="password" name="confirmPassword">
                 </div>
               </div>              
               <div class="col-12">
