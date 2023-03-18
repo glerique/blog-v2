@@ -3,18 +3,11 @@
 namespace App\Model;
 
 use App\Entity\User;
-use App\Util\Database;
+use App\Model\Model;
 
-class UserManager extends Database
+class UserManager extends Model
 {
-
-  protected $db; // Instance de PDO
-
-  public function __construct()
-  {
-    $db = $this->dbConnect();
-    $this->setDb($db);
-  }
+  protected $table = 'post';
 
   public function setDb(\PDO $db)
   {

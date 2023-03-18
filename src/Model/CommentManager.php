@@ -2,28 +2,14 @@
 
 namespace App\Model;
 
-use App\Util\Database;
+use App\Model\Model;
 use App\Entity\Comment;
 use App\Model\PostManager;
 use App\Model\UserManager;
 
-
-
-class CommentManager extends Database
-{
-
-  protected $db; // Instance de PDO
-
-  public function __construct()
-  {
-    $db = $this->dbConnect();
-    $this->setDb($db);
-  }
-
-  public function setDb(\PDO $db)
-  {
-    $this->db = $db;
-  }
+class CommentManager extends Model
+{ 
+  protected $table = 'comment';
 
   public function count()
   {

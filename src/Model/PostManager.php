@@ -3,20 +3,11 @@
 namespace App\Model;
 
 use App\Entity\Post;
-use App\Util\Database;
+use App\Model\Model;
 
-
-
-class PostManager extends Database
+class PostManager extends Model
 {
-
-  protected $db; // Instance de PDO
-
-  public function __construct()
-  {
-    $db = $this->dbConnect();
-    $this->setDb($db);
-  }
+  protected $table = 'post';
 
   public function setDb(\PDO $db)
   {
